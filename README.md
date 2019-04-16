@@ -21,6 +21,10 @@ poem esolang.
 せかいのおわり、さようなら
 ```
 
+## how to execute
+
+`$ python3 sekainoowari.py example/hello.sekainoowari`
+
 
 
 ## spec
