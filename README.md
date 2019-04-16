@@ -1,6 +1,6 @@
-# LV100POEM
+# せかいのおわり
 
-lv100 poem language.
+poem esolang.
 
 ```
 せかいがおわるさいごのひ
@@ -26,7 +26,7 @@ lv100 poem language.
 ## spec
 memory size: 2019+
 
-`ptr`: memory pointer. initial is 0. This should be between 0 and 2018.
+`ptr`: memory pointer. initial is 0. This should be between 0 and 2019.
 
 ## instructions
 | opcode | function | behavior |
