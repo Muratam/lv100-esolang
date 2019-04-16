@@ -1,6 +1,6 @@
-# Iwashi
+# LV100POEM
 
-iwashi language.
+lv100 poem language.
 https://www.youtube.com/watch?v=d_T1StgldnM
 
 ## spec
