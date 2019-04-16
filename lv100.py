@@ -10,46 +10,46 @@ if __name__ == '__main__':
     labels = dict()
     f = open(sys.argv[1], "r")
     for i, line in enumerate(f):
-        if re.match(r"だれかがハサミで", line):
+        if re.match(r"せかいがおわるさいごのひ", line):
             ops.append(["GETC"])
-        elif re.match(r"タイムラインをちょんぎった", line):
+        elif re.match(r"なんてことないにちようび", line):
             ops.append(["PUTC"])
-        elif re.match(r"そして", line):
+        elif re.match(r"ひとりでしずかに", line):
             ops.append(["GETN"])
-        elif re.match(r"あしたときのうがつながった", line):
+        elif re.match(r"するとそらには", line):
             ops.append(["PUTN"])
-        elif re.match(r"あしたのことはしっている", line):
+        elif re.match(r"しろいくも", line):
             ops.append(["INC"])
-        elif re.match(r"^(.+)がつちからはえてくるんだ", line):
-            la = re.match(r"^(.+)がつちからはえてくるんだ", line).group(1)
+        elif re.match(r"^(.+)へととんでいなくなる", line):
+            la = re.match(r"^(.+)へととんでいなくなる", line).group(1)
             ops.append(["JGZ", la])
-        elif re.match(r"^(.+)にあながあく", line):
-            la = re.match(r"^(.+)にあながあく", line).group(1)
+        elif re.match(r"^(.+)がおわるとき", line):
+            la = re.match(r"^(.+)がおわるとき", line).group(1)
             ops.append(["NOP"])
             labels[la] = i
-        elif re.match(r"すのこがきえるんだ", line):
+        elif re.match(r"くるまもいえもにんげんも", line):
             ops.append(["DEC"])
-        elif re.match(r"きのうのきおくはきえたけど", line):
+        elif re.match(r"みんなきえていなくなる", line):
             ops.append(["ZERO"])
-        elif re.match(r"きえたってこともよくわからないんだ", line):
+        elif re.match(r"さいごにのこるぼくひとり", line):
             ops.append(["EXIT"])
-        elif re.match(r"そらのうえから(.+)がたつ", line):
-            la = re.match(r"そらのうえから(.+)がたつ", line).group(1)
+        elif re.match(r"^(.+)はこどもになっていて", line):
+            la = re.match(r"^(.+)はこどもになっていて", line).group(1)
             ops.append(["JZ", la])
-        elif re.match(r"めがみえなくなってきた", line):
+        elif re.match(r"せかいのおわり", line):
             ops.append(["NEG"])
-        elif re.match(r"はなはかれず", line):
+        elif re.match(r"さようなら", line):
             ops.append(["ADD"])
-        elif re.match(r"とりはとばずねむる", line):
+        elif re.match(r"せかいをおおって", line):
             ops.append(["SUB"])
-        elif re.match(r"かぜはとまりつめたく", line):
+        elif re.match(r"あめがふる", line):
             ops.append(["MUL"])
-        elif re.match(r"つきはみちもかけもせずまわる", line):
+        elif re.match(r"うたいだす", line):
             ops.append(["DIV"])
-        elif re.match(r"(\d+)ねんまえかのことでした", line):
-            result = re.match(r"(\d+)ねんまえかのことでした", line)
+        elif re.match(r"(\d+)つぶあたるとくずれだし", line):
+            result = re.match(r"(\d+)つぶあたるとくずれだし", line)
             n = int(result.group(1))
-            if n < 0 or n > 2018:
+            if n < 0 or n > 2019:
                 raise NameError('そんな時代は無い at line: %d' % i)
             ops.append(["FOCUS", n])
         elif line == '\n':
@@ -60,7 +60,7 @@ if __name__ == '__main__':
     for op in ops:
         if op[0] == 'JZ' or op[0] == 'JGZ':
             op[1] = labels[op[1]]
-    #for op in ops:
+    # for op in ops:
     #    print(op)
     memory = [0 for i in range(3000)]
     rip = 0
@@ -124,7 +124,3 @@ if __name__ == '__main__':
         rip += 1
         if len(ops) <= rip:
             exit(0)
-
-
-
-
