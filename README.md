@@ -54,7 +54,7 @@ memory size: 2019+
 |うたいだす| DIV |*ptr = *(ptr+1) / *(ptr+2); *(ptr+1) = *(ptr+1) % *(ptr+2) |
 
 ## notes
-- GETC returns -1 when iwashi fails to read char. (eg. EOF)
+- GETC returns -1 when sekainoowari fails to read char. (eg. EOF)
 
 ## error code
 - そんな時代は無い
